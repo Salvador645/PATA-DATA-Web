@@ -5,11 +5,10 @@
     box-sizing: border-box;
 }
 
-
 /* VARIABLES */
 :root {
-    --primary: #003f87;
-    --secondary: #904d00;
+    --primary: #0056B3;
+    --secondary: #ff8c00;
 
     --background: #f8f9fb;
     --surface: #ffffff;
@@ -18,7 +17,6 @@
     --text: #191c1e;
     --text-soft: #424752;
 }
-
 
 /* BASE */
 body {
@@ -31,17 +29,25 @@ h1, h2, h3 {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-
 /* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 20px 60px;
 
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .logo-container {
@@ -68,7 +74,6 @@ h1, h2, h3 {
     text-decoration: none;
     color: var(--text);
 }
-
 
 /* BOTONES */
 .btn-primary {
@@ -100,16 +105,13 @@ h1, h2, h3 {
     transform: translateY(-4px);
 }
 
-
 /* HERO */
 .hero {
     position: relative;
     display: flex;
     align-items: center;
-
-    height: 90vh;
+    height: 120vh;
     padding: 0 80px;
-
     background: url("index.png") center/cover no-repeat;
 }
 
@@ -119,13 +121,11 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-
     background: linear-gradient(
         135deg,
         rgba(0, 63, 135, 0.85),
         rgba(0, 80, 160, 0.75)
     );
-
     z-index: 1;
 }
 
@@ -156,14 +156,12 @@ h1, h2, h3 {
     gap: 20px;
 }
 
-
 /* SECCIONES */
 section {
     padding: 100px 80px;
 }
 
-
-/* TRUST SECTION (MEJORADA) */
+/* TRUST SECTION */
 .trust-section {
     text-align: center;
     background: var(--surface-soft);
@@ -185,9 +183,6 @@ section {
     color: var(--text-soft);
 }
 
-
-/* ABOUT */
-
 /* MISSION SECTION */
 .mission {
     padding: 100px 80px;
@@ -199,14 +194,12 @@ section {
     gap: 60px;
 }
 
-/* IMAGEN */
 .mission-image img {
     width: 450px;
     height: 400px;
     border-radius: 16px;
 }
 
-/* TEXTO */
 .mission-text {
     max-width: 600px;
 }
@@ -218,63 +211,19 @@ section {
     line-height: 1.2;
 }
 
-/* PATA-DATA resaltado */
 .mission-text span {
     color: var(--primary);
     font-weight: 700;
 }
 
-/* PÁRRAFOS */
 .mission-text p {
     font-size: 18px;
     color: var(--text-soft);
     margin-bottom: 20px;
     line-height: 1.7;
 }
-/* COLLAR */
-.collar {
-    background: var(--surface-soft);
-}
 
-.collar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.collar-text h2 {
-    font-size: 48px;
-}
-
-.collar-text span {
-    color: var(--secondary);
-}
-
-.collar-img {
-    width: 350px;
-}
-
-
-/* TESTIMONIOS */
-.testimonials {
-    text-align: center;
-}
-
-.cards {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.card {
-    background: var(--surface);
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 300px;
-}
-
-/* COLLAR CARRUSEL NUEVO */
+/* COLLAR CARRUSEL */
 .collar {
     text-align: center;
     background: var(--surface-soft);
@@ -293,14 +242,20 @@ section {
     gap: 40px;
 }
 
-/* IMAGEN */
 .carousel img {
     width: 700px;
     height: 400px;
-    transition: 0.4s;
+    border-radius: 16px;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* BOTONES */
+.carousel img.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
 .arrow {
     background: var(--primary);
     color: white;
@@ -316,6 +271,46 @@ section {
     transform: scale(1.1);
 }
 
+/* TESTIMONIOS */
+.testimonials {
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 48px;       /* Más grande */
+    color: var(--primary); /* Azul */
+    font-weight: 700;      /* Negrita */
+    margin-bottom: 50px;   /* Separación de las cards */
+}
+
+.cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
 
 /* FOOTER */
 footer {
