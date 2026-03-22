@@ -39,11 +39,9 @@
 
 <!-- HERO -->
 <section class="hero">
-
     <div class="hero-overlay"></div>
 
     <div class="hero-text">
-
         <h1>
             Siempre a una <span class="highlight">Pata</span> de ti
         </h1>
@@ -57,15 +55,12 @@
             <a href="#" class="btn-primary">Comprar Ahora</a>
             <a href="#" class="btn-secondary">Explorar</a>
         </div>
-
     </div>
-
 </section>
 
 
 <!-- CONFIANZA -->
 <section class="trust-section">
-
     <h2 class="trust-big">
         Más de <span>100,000</span>
     </h2>
@@ -73,23 +68,19 @@
     <p class="trust-small">
         dueños tranquilos
     </p>
-
 </section>
 
 
-<!-- MENSAJE -->
+<!-- MISION -->
 <section class="mission">
 
     <div class="mission-container">
 
-        <!-- IMAGEN -->
         <div class="mission-image">
             <img src="cachorro.jpg" alt="Perritos felices">
         </div>
 
-        <!-- TEXTO -->
         <div class="mission-text">
-
             <h2>
                 Nuestra Misión: <br>
                 Tu Tranquilidad y Su Seguridad
@@ -104,7 +95,6 @@
                 Cada collar es un punto de datos que protege, informa y celebra la vida de tu mejor amigo,
                 transformando cada caminata en una memoria segura.
             </p>
-
         </div>
 
     </div>
@@ -112,16 +102,20 @@
 </section>
 
 
-<!-- COLLAR -->
+<!-- COLLAR (CARRUSEL) -->
 <section class="collar">
 
-    <div class="collar-content">
+    <h2 class="collar-title">
+        Diseñado para Cualquier <span>Terreno</span>
+    </h2>
 
-        <div class="collar-text">
-            <h2>Diseñado para cualquier <span>Terreno</span></h2>
-        </div>
+    <div class="carousel">
 
-        <img src="Imagenes/collares.png" class="collar-img">
+        <button class="arrow left" onclick="prevSlide()">❮</button>
+
+        <img id="carousel-image" src="collar1.png" alt="Collar">
+        
+        <button class="arrow right" onclick="nextSlide()">❯</button>
 
     </div>
 
@@ -157,6 +151,32 @@
 <footer>
     <p>© 2026 PATA-DATA</p>
 </footer>
+
+
+<!-- JS DEL CARRUSEL -->
+<script>
+let images = [
+    "collar1.png",
+    "collar2.png",
+    "collar3.png"
+];
+
+let current = 0;
+
+function showImage() {
+    document.getElementById("carousel-image").src = images[current];
+}
+
+function nextSlide() {
+    current = (current + 1) % images.length;
+    showImage();
+}
+
+function prevSlide() {
+    current = (current - 1 + images.length) % images.length;
+    showImage();
+}
+</script>
 
 </body>
 </html>

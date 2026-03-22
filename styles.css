@@ -274,6 +274,48 @@ section {
     max-width: 300px;
 }
 
+/* COLLAR CARRUSEL NUEVO */
+.collar {
+    text-align: center;
+    background: var(--surface-soft);
+}
+
+.collar-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* IMAGEN */
+.carousel img {
+    width: 700px;
+    height: 400px;
+    transition: 0.4s;
+}
+
+/* BOTONES */
+.arrow {
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
 
 /* FOOTER */
 footer {
