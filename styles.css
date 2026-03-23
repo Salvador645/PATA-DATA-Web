@@ -1,3 +1,9 @@
+/* 
+=================
+INDEX
+=================
+*/
+
 /* RESET */
 * {
     margin: 0;
@@ -312,9 +318,245 @@ section {
     margin-bottom: 15px;
 }
 
+
 /* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
     background: var(--surface-soft);
+}
+
+
+/* 
+=================
+NOSOTROS
+=================
+*/
+
+/* ================== HERO NOSOTROS ================== */
+.hero-nosotros {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url("nosotros.jpg") center/cover no-repeat;
+}
+
+.hero-overlay-nosotros {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 63, 135, 0.6); /* semi-transparente */
+    z-index: 1;
+}
+
+.hero-text-nosotros {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-text-nosotros h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.hero-text-nosotros h1 .highlight {
+    color: var(--secondary);
+}
+
+.hero-text-nosotros p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons-nosotros {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-buttons-nosotros a {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons-nosotros .btn-primary {
+    background: var(--secondary);
+    color: white;
+}
+
+.hero-buttons-nosotros .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.hero-buttons-nosotros .btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.hero-buttons-nosotros .btn-secondary:hover {
+    transform: translateY(-4px);
+    background: var(--secondary);
+    color: white;
+}
+
+/* ================== MISION Y VISION ================== */
+.mission-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.mission-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--surface-soft);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.mission-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.mission-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.mission-text h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.mission-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-soft);
+}
+
+/* ================== VALORES ================== */
+.values-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.values-section h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.cards-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card-value {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-value:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-value span {
+    font-size: 40px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.card-value h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card-value p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ================== CTA NOSOTROS ================== */
+.cta-nosotros {
+    background: var(--primary);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 80px 20px;
+}
+
+.cta-nosotros h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.cta-buttons a {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-buttons .btn-primary {
+    background: var(--secondary);
+    color: white;
+}
+
+.cta-buttons .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: white;
+    color: var(--primary);
 }
